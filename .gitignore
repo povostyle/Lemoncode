@@ -1,4 +1,19 @@
-node_modules
-.parcel-cache
-dist
-package-lock.json
+# Node
+node_modules/
+**/node_modules/
+
+# Dependencias y logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistemas y editor
+.DS_Store
+.vscode/
+.idea/
+
+# Compilados o temporales
+dist/
+build/
+.cache/
