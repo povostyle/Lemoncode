@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+// breakpoints
+$bp-small: 768px;
+$bp-large: 1024px;
+$bp-full: 1200px;
+
+// mixin para media query mínima
+@mixin media-max($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+header {
+  margin: 0 auto;
+  width: 100%;
+}
+.page-title {
+  padding: 1.2rem;
+  background: #cddf1c;
+}
+.page-container {
+  display: flex;
+  position: relative;
+  background: #393e05;
+}
+.menu-container {
+  height: 100%;
+  background: #393e05;
+}
+.menu-title {
+  padding: 1rem 1.5rem;
+  background: #393e05;
+  color: #cddf1c;
+  text-transform: uppercase;
+}
+.menu-container ul {
+  list-style: none;
+  /* padding: .8rem 0; */
+}
+.menu-container ul li {
+  padding: 0.6rem 1.5rem;
+  background: #fafbe3;
+  border-bottom: 1px solid #ccc;
+}
+.list {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+main {
+  width: 100%;
+}
+.list .card {
+  border: 1px solid #dcdcdc;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.list .card img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+.list .card:hover {
+  border: 1px solid #fff;
+  transition: all 0.6s ease;
+  box-shadow: -1px 6px 12px rgba(17, 17, 17, 0.08);
+}
+footer {
+  padding: 1.2rem;
+  background: #fafbe3;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  height: 100%;
+}
+
+@include media-max($bp-small) {
+  .page-container {
+    flex-flow: column;
+  }
+  .menu-container ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1px;
+    text-align: center;
+  }
+  .menu-container ul li {
+    padding: 0.6rem 1.5rem;
+    background: #fafbe3;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  .list .card {
+    flex-flow: wrap;
+    justify-content: flex-start;
+  }
+}
